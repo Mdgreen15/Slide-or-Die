@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 2f;
 
     float leftSide = -4f;
     float midSide = 0f;
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,7 +23,8 @@ public class Player : MonoBehaviour
         if (curSide == -1f)
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(leftSide, transform.position.y, transform.position.z), speed);//go to left side
-        }else if (curSide == 0f)
+        }
+        else if (curSide == 0f)
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(midSide, transform.position.y, transform.position.z), speed);//go to middle
         }
