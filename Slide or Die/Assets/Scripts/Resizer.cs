@@ -5,17 +5,22 @@ using UnityEngine;
 public class Resizer : MonoBehaviour
 {
     public GameObject obj;
-    float size;
+    Collider coll;
+    Vector3 size;
+    float xSize;
     // Start is called before the first frame update
     void Start()
     {
-        size = 10 * obj.transform.localScale.x;
-        transform.localScale = new Vector3(size / 3, size / 3, size / 3);
+        coll = obj.GetComponent<Collider>();
+        size = coll.bounds.size;
+        xSize = size.x * transform.localScale.x;
+        transform.localScale = new Vector3(xSize / 3, xSize / 3, xSize / 3);
+        Debug.Log(xSize);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

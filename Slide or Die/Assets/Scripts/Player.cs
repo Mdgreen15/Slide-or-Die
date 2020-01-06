@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
 {
     public float speed = 2f;
 
-    float leftSide = -4f;
+    float leftSide = -3f;
     float midSide = 0f;
-    float rightSide = 4f;
+    float rightSide = 3f;
     float curSide = 0;
 
     // Start is called before the first frame update
@@ -22,15 +22,15 @@ public class Player : MonoBehaviour
     {
         if (curSide == -1f)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(leftSide, transform.position.y, transform.position.z), speed);//go to left side
+            transform.position = Vector3.Lerp(transform.position, new Vector3(leftSide, transform.position.y, transform.position.z), speed * Time.deltaTime);//go to left side
         }
         else if (curSide == 0f)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(midSide, transform.position.y, transform.position.z), speed);//go to middle
+            transform.position = Vector3.Lerp(transform.position, new Vector3(midSide, transform.position.y, transform.position.z), speed * Time.deltaTime);//go to middle
         }
         else if (curSide == 1f)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(rightSide, transform.position.y, transform.position.z), speed);//go to right side
+            transform.position = Vector3.Lerp(transform.position, new Vector3(rightSide, transform.position.y, transform.position.z), speed * Time.deltaTime);//go to right side
         }
 
         if (Input.GetKeyDown(KeyCode.A))
